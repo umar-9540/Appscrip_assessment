@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import FilterSidebar from "./components/FilterSidebar";
@@ -158,7 +158,26 @@ const sampleProducts = [
 
 export default function Home() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+
+  const [isSidebarVisibleMobile, setIsSidebarVisibleMobile] = useState(false);
   const [sort, setSort] = useState("Recommended");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // This code runs only on the client side
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="page-container">
@@ -166,14 +185,26 @@ export default function Home() {
       <Hero />
       <div className="page-header">
         <div className="side-header">
-          <div className="results">{sampleProducts.length} Results</div>
-          <button
-            className="toggle-sidebar-button"
-            onClick={() => setIsSidebarVisible(!isSidebarVisible)}
-          >
-            <MdKeyboardArrowLeft />
-            {isSidebarVisible ? "Hide Filters" : "Show Filters"}
-          </button>
+          {!isMobile && (
+            <div className="results">{sampleProducts.length} Results</div>
+          )}
+          {!isMobile && (
+            <button
+              className="toggle-sidebar-button"
+              onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+            >
+              <MdKeyboardArrowLeft />
+              {isSidebarVisible ? "Hide Filters" : "Show Filters"}
+            </button>
+          )}
+          {isMobile && (
+            <button
+              className="mobile-filter-button"
+              onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+            >
+              FILTER
+            </button>
+          )}
         </div>
 
         <div className="products-header">
@@ -187,8 +218,8 @@ export default function Home() {
         </div>
       </div>
       <div className="main-content">
-        <FilterSidebar isSidebarVisible={isSidebarVisible} />
-        <Products isFilterOpen={isSidebarVisible} />
+        {<FilterSidebar isSidebarVisible={isSidebarVisible} />}
+        <Products isFilterOpen={isSidebarVisible} isMobile={isMobile} />
       </div>
       <Footer />
     </div>

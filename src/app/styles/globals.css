@@ -54,6 +54,12 @@ body {
   padding: 0.5rem;
   font-weight: bold;
   border: 1px solid white;
+  padding-right: 1rem; /* Adjust this value to reduce the gap */
+  appearance: none; /* Removes default browser styling for consistent appearance */
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"><path fill="black" d="M0 0l5 6 5-6z"/></svg>')
+    no-repeat right center;
+  background-size: 0.6rem; /* Adjust size of the dropdown icon */
+  outline: none;
 }
 
 .products-header option {
@@ -66,10 +72,21 @@ body {
   flex: 1;
   overflow-y: auto;
 }
+.mobile-filter-button {
+  padding: 0.5rem;
+  font-weight: bold;
+  border: 1px solid white;
+  background-color: white;
+}
 
 @media (max-width: 768px) {
-  div.page-header,
-  div.main-content {
+  .page-header,
+  .main-content {
     margin: 0 10px;
+    padding: 0px;
+  }
+
+  .page-header {
+    justify-content: space-evenly;
   }
 }

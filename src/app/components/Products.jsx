@@ -149,12 +149,16 @@ const sampleProducts = [
   },
 ];
 
-const Products = ({ isFilterOpen }) => {
+const Products = ({ isFilterOpen, isMobile }) => {
   return (
     <section className="products-section">
       <div
         className={`products-grid ${
-          isFilterOpen ? "three-columns" : "four-columns"
+          isMobile
+            ? "two-columns"
+            : isFilterOpen
+            ? "three-columns"
+            : "four-columns"
         }`}
       >
         {sampleProducts.map((product) => (

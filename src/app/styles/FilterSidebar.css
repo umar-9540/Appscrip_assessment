@@ -49,3 +49,24 @@
   align-items: center;
   gap: 0.4rem;
 }
+
+@media (max-width: 768px) {
+  .filter-sidebar {
+    position: absolute; /* Position the sidebar above the products */
+    background-color: white; /* Add a background color for visibility */
+    z-index: 10; /* Ensure it appears above other elements */
+    padding: 1rem; /* Add padding for spacing */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    transition: top 0.3s ease, opacity 0.3s ease; /* Smooth transition for top and opacity */
+    width: 40%;
+  }
+  .filter-options {
+    font-size: 0.7rem;
+  }
+  .filter-header {
+    font-size: small;
+  }
+  .customizable-checkbox {
+    font-size: small;
+  }
+}
