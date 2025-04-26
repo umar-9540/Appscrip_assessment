@@ -1,0 +1,43 @@
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+  margin: 0 0;
+  font-size: 1.1rem;
+}
+
+.product-card p {
+  color: #666;
+  font-size: 0.7rem;
+}
+
+.product-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heart {
+  cursor: pointer;
+  padding-top: 0.3rem;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+}

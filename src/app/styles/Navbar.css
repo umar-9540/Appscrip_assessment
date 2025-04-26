@@ -1,0 +1,49 @@
+.navbar {
+  margin: 0 50px 0px 50px;
+  border-bottom: 1px solid #ddd;
+  padding: 1.5rem 1rem;
+  /* position: sticky;
+  top: 0;
+  z-index: 1; */
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-name {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.icons span,
+.icons select {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.navbar-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.navbar-bottom button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  div.navbar {
+    margin: 0 10px;
+  }
+}

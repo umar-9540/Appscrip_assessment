@@ -1,0 +1,156 @@
+.footer {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  margin: 0 50px 0px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.newsletter {
+  flex: 1;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.newsletter h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  margin-bottom: 20px;
+}
+
+.subscribe {
+  display: flex;
+}
+
+.subscribe input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 0.1rem;
+  outline: none;
+  margin-right: 10px;
+}
+
+.subscribe button {
+  padding: 10px 30px;
+  background: transparent;
+  border: 1px solid gray;
+  border-radius: 0.3rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 580px;
+}
+
+.contact-info h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-info p,
+.contact-info small {
+  margin-bottom: 10px;
+}
+
+.currency-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-divider {
+  margin: 0 50px 0px 50px;
+  border: 0.5px solid grey;
+}
+
+.footer-bottom {
+  margin: 0 50px 0px 50px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1;
+  gap: 50px;
+}
+
+.link-group h4 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.link-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.link-group ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.follow-us {
+  margin-right: 8rem;
+}
+
+.follow-us .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.follow-us .social-icons img {
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+}
+
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.payment-icons img {
+  width: 2.7rem;
+  height: auto;
+  cursor: pointer;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: grey;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,24 @@
+.products-section {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.products-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.products-grid.three-columns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.products-grid.four-columns {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
